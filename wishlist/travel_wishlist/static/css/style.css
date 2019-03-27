@@ -24,3 +24,8 @@ a.nav-link {
     background-color: #333344;
     border: #dddddd;
 }
+
+.delete {
+    background-color: crimson;
+    border-color: darkred;
+}
