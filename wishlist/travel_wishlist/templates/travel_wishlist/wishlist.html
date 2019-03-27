@@ -10,7 +10,7 @@
 </form>
 
 {% for place in places %}
-
+<!-- For each place, render its name and a button that allows for the user to change the boolean value of its 'visited' property to true.  -->
 <div class="wishlist-place">
     <span class="place-name">{{ place.name }}</span>
     <form class="visited-form" method="POST" action="{% url 'place_was_visited' %}">

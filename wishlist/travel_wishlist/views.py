@@ -4,6 +4,7 @@ from .forms import NewPlaceForm
 
 # Create your views here.
 
+# This view renders the list of places that have not been visited yet.
 def place_list(request):
 
     if request.method == 'POST':
@@ -17,10 +18,12 @@ def place_list(request):
     new_place_form = NewPlaceForm()
     return render(request, 'travel_wishlist/wishlist.html', { 'places': places, 'new_place_form': new_place_form })
 
+# This view renders the places_visited page.
 def places_visited(request):
     visited = Place.objects.filter(visited=True)
     return render(request, 'travel_wishlist/visited.html', { 'visited': visited })
 
+# This view will either 404 or update the place.visited value.
 def place_was_visited(request):
     if request.method == 'POST':
         pk = request.POST.get('pk')
